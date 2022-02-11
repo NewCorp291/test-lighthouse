@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
+          ref: ${{github.event.pull_request.head.sha}}
       - name: Use Node.js 16.x
         uses: actions/setup-node@v1
         with:
@@ -21,4 +21,4 @@ jobs:
           npm install -g @lhci/cli@0.8.x
           lhci autorun --upload.target=temporary-public-storage || echo "LHCI failed!"
         env:
-          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+          LHCI_GITHUB_APP_TOKEN: ${{secrets.LHCI_GITHUB_APP_TOKEN}}
